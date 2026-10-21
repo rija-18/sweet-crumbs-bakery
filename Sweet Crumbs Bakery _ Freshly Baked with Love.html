@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fresh cakes, cupcakes, pastries and cookies made with love at Sweet Crumbs Bakery.">
+  <title>Sweet Crumbs Bakery | Freshly Baked with Love</title>
+
+  <style>
+    :root {
+      --cream: #fff9f1;
+      --peach: #ffe1d8;
+      --brown: #4a281b;
+      --accent: #9a4d2f;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+    }
+
+    header {
+      background: var(--white);
+      padding: 16px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #4a281b10;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 30px;
+      padding: 12px 22px;
+      background: var(--brown);
+      color: white;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .whatsapp {
+      background: #128c4a;
+    }
+
+    .hero {
+      min-height: 440px;
+      padding: 70px 8%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, #fff9f1 0%, #fff9f1e8 38%, #fff9f100 100%),
+        url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 490px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: Georgia, serif;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 60px);
+      margin: 15px 0;
+    }
+
+    .hero p {
+      margin-bottom: 24px;
+      max-width: 430px;
+    }
+
+    section {
+      padding: 65px 7%;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: 36px;
+      margin-top: 8px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      text-align: center;
+      background: #fffdf9;
+    }
+
+    .category {
+      padding: 15px 8px;
+    }
+
+    .category .emoji {
+      display: inline-grid;
+      place-items: center;
+      width: 65px;
+      height: 65px;
+      background: var(--peach);
+      border-radius: 50%;
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      font-family: Georgia, serif;
+    }
+
+    .category p {
+      font-size: 13px;
+      color: #76645b;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px #4a281b0c;
+    }
+
+    .product img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-info {
+      padding: 17px;
+    }
+
+    .product-info h3 {
+      font-family: Georgia, serif;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-bottom: 13px;
+    }
+
+    .product .btn {
+      padding: 9px 16px;
+      font-size: 14px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      background: #f7eee3;
+    }
+
+    .about img {
+      width: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin: 10px 0 16px;
+    }
+
+    .about p {
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 12px 0 24px;
+    }
+
+    footer {
+      background: #3b2118;
+      color: white;
+      padding: 40px 7% 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+    }
+
+    footer p, footer a {
+      color: #eadbd1;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff30;
+      margin-top: 30px;
+      padding-top: 18px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero {
+        background-position: 58% center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      nav .whatsapp {
+        padding: 8px 12px;
+      }
+
+      .hero {
+        padding: 55px 7%;
+        background:
+          linear-gradient(90deg, #fff9f1f5, #fff9f1d9),
+          url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80")
+          center/cover;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        gap: 12px;
+      }
+
+      .product img {
+        height: 140px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .about, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="http://127.0.0.1:5500/index.html#home">
+      🧁 Sweet Crumbs
+      <span>BAKERY</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="http://127.0.0.1:5500/index.html#home">Home</a>
+      <a href="http://127.0.0.1:5500/index.html#menu">Menu</a>
+      <a href="http://127.0.0.1:5500/index.html#about">About</a>
+      <a href="http://127.0.0.1:5500/index.html#contact">Contact</a>
+      <button class="btn whatsapp" onclick="order('a bakery inquiry')">
+        Order on WhatsApp
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Freshly baked · Made with love</div>
+        <h1>Sweet Moments,<br>Baked Fresh</h1>
+        <p>
+          From fluffy cakes to delicious pastries, we bring you
+          homemade goodness, crafted with care and the finest ingredients.
+          Because every bite should be special.
+        </p>
+        <a class="btn" href="http://127.0.0.1:5500/index.html#menu">Explore Our Menu →</a>
+      </div>
+    </section>
+
+    <section class="categories" aria-label="Bakery categories">
+      <div class="category">
+        <div class="emoji">🎂</div>
+        <h3>Cakes</h3>
+        <p>For every occasion</p>
+      </div>
+      <div class="category">
+        <div class="emoji">🧁</div>
+        <h3>Cupcakes</h3>
+        <p>Small treats, big joy</p>
+      </div>
+      <div class="category">
+        <div class="emoji">🥐</div>
+        <h3>Pastries</h3>
+        <p>Flaky and delicious</p>
+      </div>
+      <div class="category">
+        <div class="emoji">🍪</div>
+        <h3>Cookies</h3>
+        <p>Classic favorites</p>
+      </div>
+      <div class="category">
+        <div class="emoji">🍞</div>
+        <h3>Breads</h3>
+        <p>Fresh every day</p>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="section-heading">
+        <div class="eyebrow">Our specialties</div>
+        <h2>Popular Picks</h2>
+        <p>Handcrafted treats to make your day sweeter.</p>
+      </div>
+
+      <div class="products">
+        <article class="product">
+          <img src="./Sweet Crumbs Bakery _ Freshly Baked with Love_files/photo-1578985545062-69928b1d9587" alt="Chocolate celebration cake" loading="lazy">
+          <div class="product-info">
+            <h3>Chocolate Cake</h3>
+            <p class="price">Rs. 2,000</p>
+            <button class="btn" onclick="order('Chocolate Cake - Rs. 2000')">Order Now</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="./Sweet Crumbs Bakery _ Freshly Baked with Love_files/photo-1486427944299-d1955d23e34d" alt="Decorated cupcakes" loading="lazy">
+          <div class="product-info">
+            <h3>Vanilla Cupcakes</h3>
+            <p class="price">Rs. 250 each</p>
+            <button class="btn" onclick="order('Vanilla Cupcakes - Rs. 250 each')">Order Now</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="./Sweet Crumbs Bakery _ Freshly Baked with Love_files/photo-1555507036-ab1f4038808a" alt="Fresh buttery croissants" loading="lazy">
+          <div class="product-info">
+            <h3>Fresh Croissant</h3>
+            <p class="price">Rs. 300</p>
+            <button class="btn" onclick="order('Fresh Croissant - Rs. 300')">Order Now</button>
+          </div>
+        </article>
+
+        <article class="product">
+          <img src="./Sweet Crumbs Bakery _ Freshly Baked with Love_files/photo-1499636136210-6f4ee915583e" alt="Chocolate chip cookies" loading="lazy">
+          <div class="product-info">
+            <h3>Chocolate Cookies</h3>
+            <p class="price">Rs. 150 per pack</p>
+            <button class="btn" onclick="order('Chocolate Cookies - Rs. 150 per pack')">Order Now</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <img src="./Sweet Crumbs Bakery _ Freshly Baked with Love_files/photo-1556217477-d325251ece38" alt="Warm bakery interior" loading="lazy">
+
+      <div>
+        <div class="eyebrow">A little about us</div>
+        <h2>Our Story</h2>
+        <p>
+          At Sweet Crumbs, we believe life's sweetest moments deserve
+          something special. Our bakery brings together delicious flavors,
+          thoughtful preparation and a love for baking.
+        </p>
+        <p>
+          From everyday treats to celebration cakes, we want to make
+          every occasion a little more memorable.
+        </p>
+        <a class="btn" href="http://127.0.0.1:5500/index.html#contact">Get in Touch →</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="eyebrow">We'd love to hear from you</div>
+      <h2>Something Sweet Is Waiting</h2>
+      <p>Contact us to ask about products, prices or custom cake orders.</p>
+      <button class="btn whatsapp" onclick="order('a bakery inquiry')">
+        Order or Ask on WhatsApp
+      </button>
+      <p>Opening hours: Monday–Saturday, 9 AM–8 PM</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>🧁 Sweet Crumbs</h3>
+        <p>Freshly baked, always delicious.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="http://127.0.0.1:5500/index.html#home">Home</a></p>
+        <p><a href="http://127.0.0.1:5500/index.html#menu">Menu</a></p>
+        <p><a href="http://127.0.0.1:5500/index.html#about">About Us</a></p>
+        <p><a href="http://127.0.0.1:5500/index.html#contact">Contact</a></p>
+      </div>
+
+      <div>
+        <h3>Visit Us</h3>
+        <p>Replace this with the real bakery address.</p>
+        <p>Replace with the real business phone number.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year">2026</span> Sweet Crumbs Bakery. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // IMPORTANT: Replace this with the bakery's WhatsApp number.
+    // Use the international country code, without +, spaces or dashes.
+    const WHATSAPP_NUMBER = "923001234567";
+
+    function order(product) {
+      if (WHATSAPP_NUMBER === "923001234567") {
+        alert("Demo website: replace WHATSAPP_NUMBER with the real bakery number.");
+        return;
+      }
+
+      const message = `Hello! I would like to ask about ${product}.`;
+      const url =
+        `https://wa.me/${03001234567}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
